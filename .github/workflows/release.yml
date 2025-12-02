@@ -1,0 +1,45 @@
+changelog:
+  exclude:
+    labels:
+      - ignore-for-release
+    authors:
+      - renovate-bot
+      - dependabot[bot]
+
+  categories:
+    # 1. Nhóm Breaking Changes (Quan trọng nhất)
+    # GitHub thường tự nhận diện "!" hoặc "BREAKING CHANGE" trong body
+    # Nhưng ta có thể gom thêm các label đặc biệt
+    - title: '🚨 Thay đổi quan trọng (Breaking Changes)'
+      labels:
+        - breaking-change
+        - breaking
+
+    # 2. Nhóm Tính năng (Features)
+    - title: '🚀 Tính năng mới'
+      labels:
+        - feature
+        - enhancement
+        - feat # Mapping với commit type 'feat'
+
+    # 3. Nhóm Sửa lỗi (Bug Fixes)
+    - title: '🐛 Sửa lỗi'
+      labels:
+        - fix # Mapping với commit type 'fix'
+        - bug
+
+    # 4. Nhóm Hiệu năng & Refactor (Dành cho Dev)
+    - title: '⚡ Cải thiện hiệu năng & Code'
+      labels:
+        - perf # Mapping với commit type 'perf'
+        - refactor # Mapping với commit type 'refactor'
+        - style
+
+    # 5. Nhóm Khác (Các loại còn lại)
+    - title: '📚 Tài liệu & Bảo trì'
+      labels:
+        - docs # Mapping với commit type 'docs'
+        - chore # Mapping với commit type 'chore'
+        - test
+        - ci
+        - build
