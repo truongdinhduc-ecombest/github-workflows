@@ -7,3 +7,9 @@
 5. chore(chore 4): new change about chore 4
 6. fix(fix 1): new change about fix 3
 7. fix(fix 1): new change about fix 3
+8. fix(fix 1): new change about fix 3
+9. feat(feature 1): new change about feature 1
+10. chore(chore 4): new change about chore 4
+11. chore(chore 4): new change about chore 4
+12. perf(perf 4): new change about perf 4
+13. docs(docs 4): new change about docs 4
