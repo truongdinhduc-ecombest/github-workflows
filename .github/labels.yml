@@ -1,73 +1,93 @@
-# 1. Breaking Changes (Dark Red - Critical)
+# ==========================================================
+# 💥 MAJOR VERSION (Breaking Changes)
+# ==========================================================
 - name: "breaking-change"
   color: "b60205"
   description: "💥 Breaking changes that affect existing functionality"
 
-- name: "breaking"
-  color: "b60205"
-  description: "💥 Alias for breaking-change"
-
-# 2. New Features (Green/Teal - Positive)
+# ==========================================================
+# ✨ MINOR VERSION (Features)
+# ==========================================================
 - name: "feat"
   color: "0e8a16"
   description: "✨ A new feature"
 
 - name: "feature"
   color: "0e8a16"
-  description: "✨ Alias for feat"
+  description: "✨ Alias for feat (Common)"
 
 - name: "enhancement"
   color: "a2eeef"
-  description: "✨ New feature or improvement"
+  description: "✨ New feature or improvement (GitHub Default)"
 
-# 3. Bug Fixes (Red - Issues)
+# ==========================================================
+# 🐛 PATCH VERSION (Bug Fixes)
+# ==========================================================
 - name: "fix"
   color: "d73a4a"
   description: "🐛 A bug fix"
 
 - name: "bug"
   color: "d73a4a"
-  description: "🐛 Something isn't working"
+  description: "🐛 Something isn't working (GitHub Default)"
 
-# 4. Refactor & Performance (Orange/Yellow/White - Code Quality)
-- name: "perf"
-  color: "fbca04"
-  description: "⚡ A code change that improves performance"
+# ==========================================================
+# ♻️ OTHER CHANGES (No Version Bump or Patch)
+# ==========================================================
 
-- name: "refactor"
-  color: "f9d0c4"
-  description: "♻️ A code change that neither fixes a bug nor adds a feature"
-
-- name: "style"
-  color: "ffffff"
-  description: "🎨 Changes that do not affect the meaning of the code (white-space, formatting, etc)"
-
-# 5. Maintenance & Documentation (Blue/Purple/Grey - Ops)
+# Documentation
 - name: "docs"
   color: "0075ca"
   description: "📚 Documentation only changes"
 
-- name: "chore"
-  color: "5319e7"
-  description: "🧰 Changes to the build process or auxiliary tools and libraries"
+# Styling (Formatting, missing semi-colons, etc.)
+- name: "style"
+  color: "bfdadc"
+  description: "🎨 Changes that do not affect the meaning of the code (white-space, formatting, etc)"
 
-- name: "build"
-  color: "1d76db"
-  description: "👷 Changes that affect the build system or external dependencies"
+# Refactoring (No logic change)
+- name: "refactor"
+  color: "fbca04"
+  description: "♻️ A code change that neither fixes a bug nor adds a feature"
 
-- name: "ci"
-  color: "006b75"
-  description: "👷 Changes to our CI configuration files and scripts"
+# Performance
+- name: "perf"
+  color: "f7c6c7"
+  description: "⚡ A code change that improves performance"
 
+# Testing
 - name: "test"
   color: "c2e0c6"
   description: "💍 Adding missing tests or correcting existing tests"
 
+# Build System
+- name: "build"
+  color: "255c99"
+  description: "👷 Changes that affect the build system or external dependencies (npm, maven, gradle)"
+
+# CI/CD
+- name: "ci"
+  color: "006b75"
+  description: "👷 Changes to our CI configuration files and scripts (GitHub Actions, Travis)"
+
+# Chores (Maintenance)
+- name: "chore"
+  color: "5319e7"
+  description: "🧰 Other changes that don't modify src or test files"
+
+# Reverts
+- name: "revert"
+  color: "000000"
+  description: "⏪ Reverts a previous commit"
+
+# Dependencies (Specific for bots like dependabot)
 - name: "dependencies"
   color: "0366d6"
   description: "📦 Updates to dependencies"
 
-# 6. Exclude (Dark Grey - Hidden)
+# ==========================================================
+# 🚫 UTILITIES
+# ==========================================================
 - name: "ignore-for-release"
   color: "30363d"
   description: "🚫 Exclude this PR from the release changelog"
