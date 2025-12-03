@@ -1,4 +1,4 @@
-name: Auto Release on Tag
+name: Auto release on tag
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   release:
-    name: Create GitHub Release
+    name: Create release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
