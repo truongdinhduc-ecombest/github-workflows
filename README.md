@@ -12,3 +12,4 @@
 10. chore(chore 4): new change about chore 4
 11. chore(chore 4): new change about chore 4
 12. perf(perf 4): new change about perf 4
+13. docs(docs 4): new change about docs 4
