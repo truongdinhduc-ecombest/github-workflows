@@ -1,7 +1,7 @@
 # github-workflows
 
 1. feat(feature 1): new change about feature 1
-2. feat(feature 2): new change about feature 2
-3. style: new change about style 1
-4. feat(feature 3): new change about feature 3
-5. feat(feature 4): new change about feature 4
+2. style: new change about style 1
+3. fix(fix 1): new change about fix 3
+4. perf(perf 4): new change about perf 4
+5. chore(chore 4): new change about chore 4
