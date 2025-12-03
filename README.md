@@ -7,3 +7,4 @@
 5. chore(chore 4): new change about chore 4
 6. fix(fix 1): new change about fix 3
 7. fix(fix 1): new change about fix 3
+8. fix(fix 1): new change about fix 3
