@@ -9,3 +9,4 @@
 7. fix(fix 1): new change about fix 3
 8. fix(fix 1): new change about fix 3
 9. feat(feature 1): new change about feature 1
+10. chore(chore 4): new change about chore 4
