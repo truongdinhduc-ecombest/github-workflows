@@ -5,3 +5,4 @@
 3. fix(fix 1): new change about fix 3
 4. perf(perf 4): new change about perf 4
 5. chore(chore 4): new change about chore 4
+6. fix(fix 1): new change about fix 3
