@@ -1,9 +1,3 @@
-Here is the professional English version of the **Contribution & Release Guidelines**.
-
-You should save this content as **`CONTRIBUTING.md`** (recommended) or append it to your `README.md`.
-
----
-
 # 📜 Contribution Guidelines & Release Workflow
 
 This project leverages **GitHub Actions** to automate the creation of releases and changelogs. To ensure the generated release notes are accurate, professional, and useful, all team members **MUST** follow the guidelines below.
