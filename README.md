@@ -11,3 +11,4 @@
 9. feat(feature 1): new change about feature 1
 10. chore(chore 4): new change about chore 4
 11. chore(chore 4): new change about chore 4
+12. perf(perf 4): new change about perf 4
