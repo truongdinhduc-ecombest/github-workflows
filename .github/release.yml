@@ -23,7 +23,7 @@ changelog:
     # 3. Nhóm Sửa lỗi (Bug Fixes)
     - title: "🐛 Sửa lỗi"
       labels:
-        - fi
+        - fix
         - bug
 
     # 4. Nhóm Hiệu năng & Refactor (Dành cho Dev)
