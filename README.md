@@ -14,7 +14,7 @@ Always create a new branch from `main` (or `master`). Do not commit directly to 
 - **Bug fixes:** `fix/ios-crash`, `fix/login-button`
 - **Maintenance:** `chore/upgrade-deps`, `docs/update-readme`
 
-**📖 Reference:** [Conventional Branch Naming](https://conventional-branch.github.io/)
+**📖 Reference:** [Conventional Branch](https://conventional-branch.github.io/)
 
 ---
 
