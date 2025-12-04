@@ -3,7 +3,7 @@ fix(fix 1): fix 1
 bug(bug 1): bug 1
 style(style 1): style 1
 build(build 1): build 1
-# chore(chore 1): chore 1
+chore(chore 1): chore 1
 # ci(ci 1): ci 1
 # docs(docs 1): docs 1
 # perf(perf 1): perf 1
