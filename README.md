@@ -14,6 +14,8 @@ Always create a new branch from `main` (or `master`). Do not commit directly to 
 - **Bug Fixes:** `fix/ios-crash`, `fix/login-button`
 - **Maintenance:** `chore/upgrade-deps`, `docs/update-readme`
 
+**📖 Reference:** [Conventional Branch Naming](https://conventional-branch.github.io/)
+
 ---
 
 ## 2. Pull Request Rules (CRITICAL ⭐️)
@@ -41,20 +43,23 @@ The title will appear in the Changelog visible to stakeholders. It must follow t
 | `fix bug`     | `fix: Resolve null pointer exception on login` |
 | `refactor`    | `refactor: Optimize API response parsing`      |
 
+**📖 Reference:** [Conventional Commits](https://www.conventionalcommits.org/)
+
 ### B. PR Labels (Mandatory)
 
 You **MUST** assign at least one label to your PR using the right sidebar. This determines the category in the Changelog.
 
-| Label                            | Description                   | Changelog Category     |
-| :------------------------------- | :---------------------------- | :--------------------- |
-| `breaking-change`                | Incompatible API changes      | 💥 Breaking Changes    |
-| `feat`, `feature`, `enhancement` | New functionality             | ✨ New Features        |
-| `fix`, `bug`                     | Bug fixes                     | 🐛 Bug Fixes           |
-| `refactor`, `perf`               | Code/Performance improvements | ♻️ Code Refactoring... |
-| `chore`, `docs`                  | Maintenance & Docs            | 🧰 Maintenance...      |
-| `ignore-for-release`             | Exclude from changelog        | _(Hidden)_             |
+| Label                                                  | Description                     | Changelog Category                |
+| :----------------------------------------------------- | :------------------------------ | :-------------------------------- |
+| `breaking-change`, `breaking`                          | Incompatible API changes        | 💥 Breaking Changes               |
+| `feat`, `feature`, `enhancement`                       | New functionality               | ✨ New Features                   |
+| `fix`, `bug`                                           | Bug fixes                       | 🐛 Bug Fixes                      |
+| `refactor`, `perf`, `style`                            | Code improvements & refactoring | ♻️ Code Refactoring & Performance |
+| `build`, `chore`, `ci`, `dependencies`, `docs`, `test` | Maintenance & Documentation     | 🧰 Maintenance & Documentation    |
+| `ignore-for-release`                                   | Exclude from changelog          | _(Hidden)_                        |
 
 > ⚠️ **Warning:** If no label is assigned, the PR will appear under **"Other Changes"**, which is untidy.
+> 💡 **Note:** Bots like `dependabot` and `renovate-bot` are automatically excluded from changelog.
 
 ---
 
@@ -69,7 +74,7 @@ Reviewers should use **"Squash and merge"** when merging PRs.
 
 ## 4. Release Process (For Maintainers)
 
-Releases are fully automated. You do **not** need to manually draft releases on GitHub.
+Releases are fully automated via GitHub Actions. You do **not** need to manually draft releases on GitHub.
 
 **Workflow:**
 
@@ -91,15 +96,43 @@ git push origin v1.0.0
 
 🚀 **What happens next?**
 
-- GitHub Actions will trigger automatically.
-- Within ~30 seconds, a new Release will be published under the **Releases** tab, complete with the auto-generated Changelog.
+- The `Auto release on tag` GitHub Actions workflow triggers automatically.
+- Within ~30 seconds, a new Release will be published under the **Releases** tab with:
+  - Auto-generated changelog based on PR labels and titles
+  - Release notes organized by category (Breaking Changes, Features, Bug Fixes, etc.)
+  - Support for prerelease versions (tags containing `-` are marked as prerelease)
+
+**📖 Reference:** [Semantic Versioning](https://semver.org/)
+
+---
+
+## 5. GitHub Actions Workflows
+
+This repository includes automated workflows:
+
+### **auto-release.yml**
+
+- **Trigger:** When a tag matching `v*` is pushed
+- **Action:** Automatically creates a GitHub Release with auto-generated changelog
+- **Permissions:** `contents: write` to create releases
+
+### **sync-labels.yml**
+
+- **Trigger:** When `.github/labels.yml` is modified on `main` branch (or manually via workflow_dispatch)
+- **Action:** Syncs all defined labels to the repository
+- **Permissions:** `issues: write` to manage labels
+
+### **Label Syncing**
+
+All PR labels are defined in `.github/labels.yml` and automatically synced to your repository. These labels directly impact changelog categorization.
 
 ---
 
 ### ✅ Developer Checklist before creating a PR:
 
 - [ ] Branch name follows convention (`feat/...`, `fix/...`).
-- [ ] PR Title follows Conventional Commits (`feat: ...`).
-- [ ] **Labels** are assigned. (Go back and add them if you forgot!)
+- [ ] PR Title follows Conventional Commits (`feat: ...`, `fix: ...`, etc.).
+- [ ] **At least one label** is assigned from the available labels.
+- [ ] If breaking changes, ensure `breaking-change` label is added.
 
 ---
