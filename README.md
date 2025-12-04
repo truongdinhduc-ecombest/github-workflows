@@ -8,10 +8,10 @@ This project leverages **GitHub Actions** to automate the creation of releases a
 
 Always create a new branch from `main` (or `master`). Do not commit directly to the default branch.
 
-**Naming Convention:** `type/short-description`
+**Naming convention:** `type/short-description`
 
-- **New Features:** `feat/user-auth`, `feat/dark-mode`
-- **Bug Fixes:** `fix/ios-crash`, `fix/login-button`
+- **New features:** `feat/user-auth`, `feat/dark-mode`
+- **Bug fixes:** `fix/ios-crash`, `fix/login-button`
 - **Maintenance:** `chore/upgrade-deps`, `docs/update-readme`
 
 **📖 Reference:** [Conventional Branch Naming](https://conventional-branch.github.io/)
@@ -24,11 +24,11 @@ The automation system reads the **Pull Request (PR) Title** and **Labels** to ge
 
 ### A. PR Title
 
-The title will appear in the Changelog visible to stakeholders. It must follow the **Conventional Commits** format:
+The title will appear in the changelog visible to stakeholders. It must follow the **Conventional Commits** format:
 
 `type: description`
 
-**Allowed Types:**
+**Allowed types:**
 
 - `feat`: A new feature.
 - `fix`: A bug fix.
@@ -37,7 +37,7 @@ The title will appear in the Changelog visible to stakeholders. It must follow t
 - `docs`: Documentation only changes.
 - `perf`: Performance improvements.
 
-| ❌ DO NOT USE | ✅ DO USE                                      |
+| ❌ Do not use | ✅ Do use                                      |
 | :------------ | :--------------------------------------------- |
 | `update code` | `feat: Add user dashboard layout`              |
 | `fix bug`     | `fix: Resolve null pointer exception on login` |
@@ -47,7 +47,7 @@ The title will appear in the Changelog visible to stakeholders. It must follow t
 
 ### B. PR Labels (Mandatory)
 
-You **MUST** assign at least one label to your PR using the right sidebar. This determines the category in the Changelog.
+You **MUST** assign at least one label to your PR using the right sidebar. This determines the category in the changelog.
 
 | Label                                                  | Description                     | Changelog Category                |
 | :----------------------------------------------------- | :------------------------------ | :-------------------------------- |
@@ -68,7 +68,7 @@ You **MUST** assign at least one label to your PR using the right sidebar. This 
 Reviewers should use **"Squash and merge"** when merging PRs.
 
 - **Why:** This combines all intermediate commits (e.g., `wip`, `typo fix`) into a single, clean commit on the `main` branch.
-- **Result:** The git history remains clean and aligns perfectly with the generated Changelog.
+- **Result:** The git history remains clean and aligns perfectly with the generated changelog.
 
 ---
 
@@ -97,7 +97,7 @@ git push origin v1.0.0
 🚀 **What happens next?**
 
 - The `Auto release on tag` GitHub Actions workflow triggers automatically.
-- Within ~30 seconds, a new Release will be published under the **Releases** tab with:
+- Within ~30 seconds, a new release will be published under the **Releases** tab with:
   - Auto-generated changelog based on PR labels and titles
   - Release notes organized by category (Breaking Changes, Features, Bug Fixes, etc.)
   - Support for prerelease versions (tags containing `-` are marked as prerelease)
@@ -113,22 +113,22 @@ This repository includes automated workflows:
 ### **auto-release.yml**
 
 - **Trigger:** When a tag matching `v*` is pushed
-- **Action:** Automatically creates a GitHub Release with auto-generated changelog
+- **Action:** Automatically creates a GitHub release with auto-generated changelog
 - **Permissions:** `contents: write` to create releases
 
 ### **sync-labels.yml**
 
-- **Trigger:** When `.github/labels.yml` is modified on `main` branch (or manually via workflow_dispatch)
+- **Trigger:** When `.github/labels.yml` is modified on `main` branch (or manually via `workflow_dispatch`)
 - **Action:** Syncs all defined labels to the repository
 - **Permissions:** `issues: write` to manage labels
 
-### **Label Syncing**
+### **Label syncing**
 
 All PR labels are defined in `.github/labels.yml` and automatically synced to your repository. These labels directly impact changelog categorization.
 
 ---
 
-### ✅ Developer Checklist before creating a PR:
+### ✅ Developer checklist before creating a PR:
 
 - [ ] Branch name follows convention (`feat/...`, `fix/...`).
 - [ ] PR Title follows Conventional Commits (`feat: ...`, `fix: ...`, etc.).
