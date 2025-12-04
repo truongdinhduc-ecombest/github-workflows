@@ -1,0 +1,42 @@
+name-template: "v$RESOLVED_VERSION"
+tag-template: "v$RESOLVED_VERSION"
+change-template: "- $TITLE (#$NUMBER) ($SHA)"
+
+categories:
+  - title: "💥 Breaking Changes"
+    labels:
+      - breaking-change
+      - breaking
+
+  - title: "✨ New Features"
+    labels:
+      - enhancement
+      - feature
+      - feat
+
+  - title: "🐛 Bug Fixes"
+    labels:
+      - bug
+      - fix
+
+  - title: "♻️ Code Refactoring & Performance"
+    labels:
+      - perf
+      - refactor
+      - style
+
+  - title: "🧰 Maintenance & Documentation"
+    labels:
+      - build
+      - chore
+      - ci
+      - dependencies
+      - docs
+      - test
+
+exclude-labels:
+  - ignore-for-release
+
+exclude-contributors:
+  - dependabot[bot]
+  - renovate-bot

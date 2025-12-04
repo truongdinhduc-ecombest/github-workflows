@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: read
 
 jobs:
   release:
@@ -16,8 +17,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Create Release
-        uses: softprops/action-gh-release@v2
+      - name: Create release
+        uses: release-drafter/release-drafter@v6
         with:
-          generate_release_notes: true
+          config-name: release-drafter.yml
+          publish: true
+          name: ${{ github.ref_name }}
           prerelease: ${{ contains(github.ref, '-') }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
