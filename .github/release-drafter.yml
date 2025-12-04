@@ -1,6 +1,12 @@
 name-template: "v$RESOLVED_VERSION"
 tag-template: "v$RESOLVED_VERSION"
 change-template: "- $TITLE (#$NUMBER) ($SHA)"
+template: |
+  ## Changes in $RESOLVED_VERSION
+  $CHANGES
+
+  ---
+  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
 
 categories:
   - title: "💥 Breaking Changes"
