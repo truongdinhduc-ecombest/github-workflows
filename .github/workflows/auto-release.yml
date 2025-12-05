@@ -1,3 +1,5 @@
+# .github/workflows/auto-release.yml
+
 name: Auto release on tag
 
 on:

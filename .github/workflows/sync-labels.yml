@@ -1,3 +1,5 @@
+# .github/workflows/sync-labels.yml
+
 name: Sync labels
 
 on:
