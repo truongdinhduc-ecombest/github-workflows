@@ -1,38 +1,47 @@
 # .github/release-drafter.yml
 
-name-template: "v$RESOLVED_VERSION"
+name-template: "Release v$RESOLVED_VERSION"
 tag-template: "v$RESOLVED_VERSION"
+change-template: "- $TITLE (#$NUMBER) by @$AUTHOR"
+no-changes-template: "- No changes in this release."
+contributors-template: "- @$CONTRIBUTOR"
+sort-by: merged_at
+sort-direction: descending
 template: |
-  ## What's Changed
+  ## Release Overview
+  - Version: v$RESOLVED_VERSION
+  - Comparison: [$PREVIOUS_TAG...v$RESOLVED_VERSION](https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION)
+
+  ## Changes by Category
   $CHANGES
 
-
-  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
+  ## Contributors
+  $CONTRIBUTORS
 
 categories:
-  - title: "💥 Breaking Changes"
+  - title: "Breaking Changes"
     labels:
       - breaking-change
       - breaking
 
-  - title: "✨ New Features"
+  - title: "Features"
     labels:
       - enhancement
       - feature
       - feat
 
-  - title: "🐛 Bug Fixes"
+  - title: "Bug Fixes"
     labels:
       - bug
       - fix
 
-  - title: "♻️ Code Refactoring & Performance"
+  - title: "Improvements"
     labels:
       - perf
       - refactor
       - style
 
-  - title: "🧰 Maintenance & Documentation"
+  - title: "Maintenance & Documentation"
     labels:
       - build
       - chore
