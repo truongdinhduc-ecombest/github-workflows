@@ -1,2 +1,3 @@
 feat(feat 1): feat 1
 feat(feat 2): feat 2
+fix(fix 3): fix 3
