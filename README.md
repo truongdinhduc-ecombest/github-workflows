@@ -51,12 +51,12 @@ You **MUST** assign at least one label to your PR using the right sidebar. This 
 
 | Label                                                  | Description                     | Changelog Category                |
 | :----------------------------------------------------- | :------------------------------ | :-------------------------------- |
-| `breaking-change`, `breaking`                          | Incompatible API changes        | 💥 Breaking Changes               |
-| `feat`, `feature`, `enhancement`                       | New functionality               | ✨ New Features                   |
-| `fix`, `bug`                                           | Bug fixes                       | 🐛 Bug Fixes                      |
-| `refactor`, `perf`, `style`                            | Code improvements & refactoring | ♻️ Code Refactoring & Performance |
-| `build`, `chore`, `ci`, `dependencies`, `docs`, `test` | Maintenance & Documentation     | 🧰 Maintenance & Documentation    |
-| `ignore-for-release`                                   | Exclude from changelog          | _(Hidden)_                        |
+| `breaking-change`, `breaking`                          | Incompatible API changes        | Breaking Changes                  |
+| `feat`, `feature`, `enhancement`                       | New functionality               | Features                          |
+| `fix`, `bug`                                           | Bug fixes                       | Bug Fixes                         |
+| `refactor`, `perf`, `style`                            | Code improvements & refactoring | Improvements                      |
+| `build`, `chore`, `ci`, `dependencies`, `docs`, `test` | Maintenance & Documentation     | Maintenance & Documentation       |
+| `ignore-for-release`                                   | Exclude from changelog          | (Hidden)                          |
 
 > ⚠️ **Warning:** If no label is assigned, the PR will appear under **"Other Changes"**, which is untidy.
 > 💡 **Note:** Bots like `dependabot` and `renovate-bot` are automatically excluded from changelog.
@@ -96,11 +96,12 @@ git push origin v1.0.0
 
 🚀 **What happens next?**
 
-- The `Auto release on tag` GitHub Actions workflow triggers automatically.
-- Within ~30 seconds, a new release will be published under the **Releases** tab with:
-  - Auto-generated changelog based on PR labels and titles
-  - Release notes organized by category (Breaking Changes, Features, Bug Fixes, etc.)
-  - Support for prerelease versions (tags containing `-` are marked as prerelease)
+- The `Auto release on tag` GitHub Actions workflow triggers automatically (with full git history fetched for Release Drafter context).
+- Release Drafter publishes a release using the pushed tag as `name/tag/version`, ensuring the artifact matches the tag you pushed.
+- Within ~30 seconds, a new release appears under the **Releases** tab with:
+  - Auto-generated changelog dựa trên tiêu đề PR + nhãn (theo bảng mapping ở trên)
+  - Release notes tổ chức theo nhóm (Breaking Changes, Features, Bug Fixes, Improvements, Maintenance & Documentation)
+  - Tự phát hiện prerelease nếu tag chứa dấu `-` (ví dụ `v1.2.0-rc.1`)
 
 **📖 Reference:** [Semantic Versioning](https://semver.org/)
 
@@ -114,7 +115,8 @@ This repository includes automated workflows:
 
 - **Trigger:** When a tag matching `v*` is pushed
 - **Action:** Automatically creates a GitHub release with auto-generated changelog
-- **Permissions:** `contents: write` to create releases
+- **Permissions:** `contents: write` để tạo release, `pull-requests: read` để lấy metadata PR
+- **Đặc điểm nổi bật:** checkout với `fetch-depth: 0` để Release Drafter thấy đầy đủ lịch sử/PR, ép `name/tag/version` = tag vừa push để tránh sai lệch bản phát hành, tự đánh dấu prerelease nếu tag có hậu tố.
 
 ### **sync-labels.yml**
 

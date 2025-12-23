@@ -7,6 +7,10 @@
   color: "b60205"
   description: "💥 Breaking changes that affect existing functionality"
 
+- name: "breaking"
+  color: "b60205"
+  description: "💥 Breaking changes (alias for breaking-change)"
+
 # ==========================================================
 # ✨ MINOR VERSION (Features)
 # ==========================================================
