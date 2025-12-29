@@ -28,4 +28,6 @@ jobs:
       - name: Install semantic-release
         run: npm install --global --no-fund --no-audit semantic-release @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/github
       - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: semantic-release
