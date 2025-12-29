@@ -18,7 +18,7 @@
         "assets": [
           "CHANGELOG.md"
         ],
-        "message": "chore(release): ${nextRelease.version}"
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\nChangelog commit: ${env.GITHUB_SERVER_URL}/${env.GITHUB_REPOSITORY}/commit/${nextRelease.gitHead}\n\n${nextRelease.notes}"
       }
     ],
     "@semantic-release/github"
